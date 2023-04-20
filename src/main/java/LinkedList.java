@@ -1,6 +1,3 @@
-import java.util.ArrayList;
-import java.util.List;
-
 public class LinkedList {
     private Node head;
 
@@ -8,15 +5,11 @@ public class LinkedList {
         String data;
         Node next;
 
-        Node(String data){
-            data = data;
-
-        }
-    }
+       }
 
     // добавление значения в начало списка
     public void addToBeginning (String data){
-        Node node = new Node(data);
+        Node node = new Node();
         node.data = data;
         node.next = head;
         head = node;
@@ -48,7 +41,7 @@ public class LinkedList {
 
    // добавление значения в конец списка
     public void addToEnd (String data){
-        Node node = new Node(data);
+        Node node = new Node();
         node.data = data;
         if(head == null){
             head=node;
@@ -97,16 +90,24 @@ public class LinkedList {
             throw new NullPointerException("The list is empty");
     }
       // Определение, содержит ли список заданное значение, или нет
-    public boolean checkIfThereIsValue (String line){
+    public boolean checkIfThereIsValue (String line) {
         Node temp = head;
-
-            if (temp.data.contains(line)){
+        while (temp != null && temp.data != null) {
+            if (temp.data.equals(line)) {
                 System.out.println("The list contains " + line);
-            } else System.out.println("There is no such element in the list");
+               return true;
+                }
+            temp = temp.next;
+
+            }
+        System.out.println("The list doesn't contain " + line);
+        return false;
+
+        }
 
 
-        return true;
-    }
+
+
     // Определение, является ли список пустым, или нет
     public boolean checkIfEmpty (){
         if (head != null)
@@ -121,6 +122,9 @@ public class LinkedList {
 
         Node temp = head;
         Node previousTemp = null;
+        if(head.data.equals(line)){
+            head = head.next;
+        }
         while (temp != null && !temp.data.equals(line)) {
             previousTemp = temp;
             temp = temp.next;

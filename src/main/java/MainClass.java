@@ -16,9 +16,9 @@ public class MainClass {
         list.extractAndDeleteFromEnd();
         list.print();
         list.checkIfEmpty();
-        list.checkIfThereIsValue("is");
+        list.checkIfThereIsValue("right");
         list.checkIfThereIsValue("ranger");
-        list.deleteTheGivenDataFromTheList("right");
+        list.deleteTheGivenDataFromTheList("The list");
         list.print();
         list.modifyEachElement("r");
         list.print();
