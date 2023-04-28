@@ -106,10 +106,7 @@ public class LinkedList {
 
         }
 
-
-
-
-    // Определение, является ли список пустым, или нет
+  // Определение, является ли список пустым, или нет
     public boolean checkIfEmpty (){
         if (head != null)
             System.out.println("The list contains data");
